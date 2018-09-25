@@ -45,28 +45,14 @@ namespace IT1050Lab1
             age = int.Parse(System.Console.ReadLine());
 
             System.Console.WriteLine("true or false: You are a citizen of the US? ");
-            isCitizen = bool.TryParse(Console.ReadLine(), out bool result);
+            isCitizen = bool.Parse(Console.ReadLine());
 
-            if ((isCitizen == true) && (age >= 18))
-            {
-                canVote = true;
-            }
-            else
-            {
-                canVote = false;
-            }
+            canVote = (isCitizen) && (age >= 18);
 
             System.Console.WriteLine("Thank you for your input: " + fullName);
             System.Console.WriteLine("Your height in centimeters is: " + totalHeightCM + " cm");
 
-            if (canVote == true)
-            {
-                System.Console.WriteLine("You are able to vote ");
-            }
-            else
-            {
-                System.Console.WriteLine("You aren't eligible to vote");
-            }
+            System.Console.WriteLine("The value of canVote, which shows your ability to vote, is: " + canVote);
 
             System.Console.WriteLine("Press any key to continue... ");  
             System.Console.ReadKey();                              
