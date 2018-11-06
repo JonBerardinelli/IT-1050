@@ -23,6 +23,11 @@ namespace IT1050_Lab3
             System.Console.WriteLine(this.Name + " has a grade of:" + this.Grade + " in " + this.Teacher.Name + "'s class.");
         }
 
-
+        /*
+        public void SetGrade(Student someStudent, int grade)
+        {
+            someStudent.Grade = grade;
+        }
+        */
     }
 }
