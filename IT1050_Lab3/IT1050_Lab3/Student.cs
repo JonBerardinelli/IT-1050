@@ -18,16 +18,16 @@ namespace IT1050_Lab3
             this.Teacher = teacherName;
             this.Grade = 0;
         }
+
         public void studentInfoPrint()
         {
-            System.Console.WriteLine(this.Name + " has a grade of:" + this.Grade + " in " + this.Teacher.Name + "'s class.");
+            System.Console.WriteLine(this.Name + " has a grade of: " + this.Grade + " in " + Teacher.instructorsInfoPrint());
         }
 
-        /*
-        public void SetGrade(Student someStudent, int grade)
+        public void SetGrade(Student aStudent, int grade)
         {
-            someStudent.Grade = grade;
+            Teacher.SetStudentGrade(aStudent, grade);
         }
-        */
+        
     }
 }

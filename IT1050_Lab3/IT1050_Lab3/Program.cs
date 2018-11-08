@@ -22,9 +22,6 @@ namespace IT1050_Lab3
             mike.SetStudentGrade(melissa, 90);
             mike.SetStudentGrade(matt, 92);
 
-            john.instructorInfoPrint();
-            mike.instructorInfoPrint();
-
             System.Console.WriteLine("");
 
             jane.studentInfoPrint();

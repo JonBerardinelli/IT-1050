@@ -22,9 +22,10 @@ namespace IT1050_Lab3
             someStudent.Grade = grade;
         }
 
-        public void instructorInfoPrint()
+        public string instructorsInfoPrint()
         {
-            System.Console.WriteLine(this.Name + " teaches " + this.CourseName);
+            return (this.Name + "'s " + this.CourseName + " class.");
         }
+
     }
 }
