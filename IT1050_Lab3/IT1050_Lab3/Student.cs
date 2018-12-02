@@ -28,6 +28,19 @@ namespace IT1050_Lab3
         {
             Teacher.SetStudentGrade(aStudent, grade);
         }
-        
+        class Math
+
+        {
+
+            public double Add(double x, double y)
+
+            {
+
+                return x + y;
+
+            }
+            double sum = new Math().Add(5, 10);
+
+        }
     }
 }
