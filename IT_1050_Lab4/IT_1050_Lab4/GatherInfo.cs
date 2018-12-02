@@ -86,6 +86,7 @@ namespace IT_1050_Lab4
         public void TotalPriceCalc()
         {
             this.totalPrice = (ticketSum + concessionSum) - candyBulkDiscount;
+            System.Console.WriteLine("Your bill comes to: $" + totalPrice + ".");
         }
 
 

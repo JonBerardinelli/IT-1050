@@ -12,12 +12,13 @@ namespace IT_1050_Lab4
         {
 
             GatherInfo tickets = new GatherInfo();
-            GatherInfo concessions = new GatherInfo();
-            GatherInfo discounts = new GatherInfo();
             tickets.MovieTicketsInfo();
-            concessions.ConcessionsInfo();
-            discounts.DiscountInfo();
+            tickets.ConcessionsInfo();
+            tickets.DiscountInfo();
+            tickets.TotalPriceCalc();
 
+            System.Console.WriteLine("Press any key to end program.");
+            System.Console.ReadKey();
 
         }
     }

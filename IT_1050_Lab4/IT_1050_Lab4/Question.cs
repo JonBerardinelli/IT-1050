@@ -21,6 +21,7 @@ namespace IT_1050_Lab4
 
             public static bool AskForBool(string prompt)
             {
+                System.Console.Write(prompt.PadRight(33) + " : ");
                 string input = System.Console.ReadLine().ToLower();
                 return input.StartsWith("y") || input.StartsWith("t");
             }
