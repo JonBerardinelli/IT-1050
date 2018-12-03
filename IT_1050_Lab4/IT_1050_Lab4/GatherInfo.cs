@@ -31,9 +31,9 @@ namespace IT_1050_Lab4
         public void MovieTicketsInfo()
         {
             this.trueMatinee = Question.AskForBool("Hello, are you going to a Matinee (true) or an Eveninng (false) showing?");
-            this.childTickets = Question.AskForInteger("How many Child tickets will  you need?");
-            this.adultTickets = Question.AskForInteger("How many Adult tickets will  you need?");
-            this.seniorTickets = Question.AskForInteger("How many Senior tickets will  you need?");
+            this.childTickets = Question.AskForInteger("How many Child tickets will you need?");
+            this.adultTickets = Question.AskForInteger("How many Adult tickets will you need?");
+            this.seniorTickets = Question.AskForInteger("How many Senior tickets will you need?");
 
             if (trueMatinee == true)
             {
@@ -62,7 +62,7 @@ namespace IT_1050_Lab4
             //Discount 1: Each purchase of a popcorn and a large soda grants a $2 discount on one movie ticket.
             this.totalTicketNum = childTickets + adultTickets + seniorTickets;
             this.minvale1 = Math.Min(popcornNum, largeSodaNum);
-            this.minvale2 = Math.Min(popcornNum, totalTicketNum);
+            this.minvale2 = Math.Min(minvale1, totalTicketNum);
             this.popcornLSodaDiscount = (minvale2 * 2.00);
 
             //Discount 2: If 3 or more people purchase tickets to an evening show, they get 1 free bag of popcorn.
@@ -71,7 +71,7 @@ namespace IT_1050_Lab4
                 this.groupPopcornDiscount = 4.50;
             }
             else
-                this.popcornLSodaDiscount = 0;
+                this.groupPopcornDiscount = 0;
 
             //Discount 3: For each 3 candies you buy, you can get a 4th candy for free.
             if (candyNum % 3 != 0)
@@ -85,7 +85,7 @@ namespace IT_1050_Lab4
         }
         public void TotalPriceCalc()
         {
-            this.totalPrice = (ticketSum + concessionSum) - candyBulkDiscount;
+            this.totalPrice = (ticketSum + concessionSum) - totalDiscount;
             System.Console.WriteLine("Your bill comes to: $" + totalPrice + ".");
         }
 

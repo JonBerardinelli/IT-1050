@@ -15,6 +15,8 @@ namespace IT_1050_Lab4
             tickets.MovieTicketsInfo();
             tickets.ConcessionsInfo();
             tickets.DiscountInfo();
+
+            System.Console.WriteLine("");
             tickets.TotalPriceCalc();
 
             System.Console.WriteLine("Press any key to end program.");
