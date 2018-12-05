@@ -10,6 +10,23 @@ namespace _12_4_18
     {
         static void Main(string[] args)
         {
+            #region Intructions 
+            /*
+            Loops and Arrays Practice Assignment
+
+                Create a class named Person
+                •	Every Person has a FirstName which is a string.
+                •	Every Person has a LastName which is a string.
+                •	Every Person is created with initial values for their FirstName and LastName.
+                •	Every Person can Print their full name to the console.
+
+                In the Main Program:
+                •	Declare and instantiate at least 3 people with distinct names.
+                •	Store all three people inside of a single array.
+                •	Loop through the array and print each person’s full name.
+            */
+            #endregion
+
             Person[] people;
             people = new Person[3];
             people[0] = new Person("Nick", "Smith");
