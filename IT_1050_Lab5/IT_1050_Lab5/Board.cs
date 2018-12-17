@@ -9,57 +9,39 @@ namespace IT_1050_Lab5
     public class Board
     {
         public const int size = 8;
-        public static string[][] grid; 
+        public static string[][] grid = new string[size][];
+        MovePiece move = new MovePiece();
+        PlacePiece newSet = new PlacePiece();
 
-        public void CreateBoard()
+        public void ChessBoard()
         {
-            Console.Clear();
-            grid = new string[size][];
-
-            for (int i = 0; i < size; i++)
+            newSet.CreateChessSets();
+            while (!(move.endCheck))
             {
-                grid[i] = new string[size];
-
-                for (int j = 0; j < size; j++)
+                Console.Clear();
+                int rowlength = grid.GetLength(0);
+                System.Console.Write("    ");
+                for (int i = 0; i < rowlength; i++)
                 {
-                    grid[i][j] = (i < 2 || i > 5) ? "X" : " ";
+                    System.Console.Write(" " + i + " |");
                 }
-            }
-        }
-
-        public void PrintBoard()
-        {
-            //Writes top line of grid numbers
-            int rowlength = grid.GetLength(0);
-            System.Console.Write("    ");
-            for (int i = 0; i< rowlength; i++)
-            {
-//                System.Console.Write(" ");
-                System.Console.Write(" " + i + " |");
-            }
-            System.Console.WriteLine("");
-            System.Console.Write("  ----------------------------------");
-
-            for (int i = 0; i < size; i++)
-            {
-                System.Console.WriteLine();
-                System.Console.Write("  "+i); // x axis header
-/*                for (int j = 0; j < rowlength; j++)
-                {
-                    Console.Write("_");
-                }
-*/
-                for (int j = 0; j < size; j++)
-                {
-                    System.Console.Write("| " +grid[i][j] + " ");
-                }
-                System.Console.WriteLine("|");
+                System.Console.WriteLine("");
                 System.Console.Write("  ----------------------------------");
-                
 
+                for (int i = 0; i < size; i++)
+                {
+                    System.Console.WriteLine();
+                    System.Console.Write("  " + i); 
+                    for (int j = 0; j < size; j++)
+                    {
+                        System.Console.Write("| " + grid[i][j] + " ");
+                    }
+                    System.Console.WriteLine("|");
+                    System.Console.Write("  ----------------------------------");
+                }
+                System.Console.WriteLine("");
+                move.MakeMove();
             }
         }
-
-
     }
 }

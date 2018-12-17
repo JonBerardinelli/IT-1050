@@ -8,18 +8,18 @@ namespace IT_1050_Lab5
 {
     public class MovePiece
     {
-        private int currentXPosition;
         private int currentYPosition;
-        private int newXPosition;
+        private int currentXPosition;
         private int newYPosition;
+        private int newXPosition;
         public bool endCheck { get; set; }
 
         public MovePiece()
         {
-            currentXPosition = 0;
             currentYPosition = 0;
-            newXPosition = 0;
+            currentXPosition = 0;
             newYPosition = 0;
+            newXPosition = 0;
             endCheck = false;
         }
 
@@ -33,22 +33,23 @@ namespace IT_1050_Lab5
 
         private void getCoordinates()
         {
-            Console.WriteLine("Enter Target's X axis");
-            endCheck = checkGridBoundry(int.TryParse(Console.ReadLine(), out currentXPosition));
+            Console.WriteLine("All coordinates must be between 0-7");
+            Console.WriteLine("Enter Target's X Coordinate: ");
+            endCheck = checkGridBoundry(int.TryParse(Console.ReadLine(), out currentYPosition));
             if (!endCheck) 
             {
-                Console.WriteLine("Enter Target's Y axis");
-                endCheck = checkGridBoundry(int.TryParse(Console.ReadLine(), out currentYPosition));
+                Console.WriteLine("Enter Target's Y Coordinate: ");
+                endCheck = checkGridBoundry(int.TryParse(Console.ReadLine(), out currentXPosition));
             }
             if (!endCheck) 
             {
-                Console.WriteLine("Enter Destination's X axis");
-                endCheck = checkGridBoundry(int.TryParse(Console.ReadLine(), out newXPosition));
+                Console.WriteLine("Enter Destination's X Coordinate: ");
+                endCheck = checkGridBoundry(int.TryParse(Console.ReadLine(), out newYPosition));
             }
             if (!endCheck)
             {
-                Console.WriteLine("Enter Destination's Y axis");
-                endCheck = checkGridBoundry(int.TryParse(Console.ReadLine(), out newYPosition));
+                Console.WriteLine("Enter Destination's Y Coordinate: ");
+                endCheck = checkGridBoundry(int.TryParse(Console.ReadLine(), out newXPosition));
             }
         }
 
@@ -58,10 +59,10 @@ namespace IT_1050_Lab5
 
             if (!parsed)
                 outOfBounds = true;
-            else if (currentXPosition < 0 || currentYPosition < 0 || newXPosition < 0 || newYPosition < 0)
+            else if (currentYPosition < 0 || currentXPosition < 0 || newYPosition < 0 || newXPosition < 0)
                 outOfBounds = true;
-            else if (currentXPosition > Board.size - 1 || currentYPosition > Board.size - 1 ||
-                      newXPosition > Board.size - 1 || newYPosition > Board.size - 1)
+            else if (currentYPosition > Board.size - 1 || currentXPosition > Board.size - 1 ||
+                      newYPosition > Board.size - 1 || newXPosition > Board.size - 1)
                 outOfBounds = true;
 
             if (outOfBounds)
@@ -73,8 +74,8 @@ namespace IT_1050_Lab5
 
         private void changePiecePlacement()
         {
-            PlacePiece.playingPieces[newXPosition, newYPosition] = PlacePiece.playingPieces[currentXPosition, currentYPosition]; 
-            PlacePiece.playingPieces[currentXPosition, currentYPosition] = PlacePiece.spacer; 
+            Board.grid[newXPosition][newYPosition] = Board.grid[currentXPosition][currentYPosition];
+            Board.grid[currentXPosition][currentYPosition] = " ";
         }
 
     }

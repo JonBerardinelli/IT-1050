@@ -11,19 +11,11 @@ namespace IT_1050_Lab5
         static void Main(string[] args)
         {
             Board board = new Board();
-            MovePiece move = new MovePiece();
             PlacePiece newPiece = new PlacePiece();
 
-            while (!(move.endCheck))
-            {
-                board.CreateBoard();
-                board.PrintBoard();
-                System.Console.WriteLine("");
-
-                move.MakeMove();
-            }
-/*            System.Console.WriteLine("");
-            System.Console.WriteLine("Press any button to end program");*/
+            board.ChessBoard();
+            System.Console.WriteLine("");
+            
             System.Console.ReadKey();
         }
     }
